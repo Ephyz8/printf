@@ -1,7 +1,5 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdio.h>
+
 /**
  * _printf - prints formatted string
  * @format: formatted string
@@ -11,11 +9,12 @@
 
 int _printf(const char *format, ...)
 {
-	/*va_list arg;*/
-	/*va_start(arg, format);*/
+	va_list arg;
+	va_start(arg, format);
 	int i = 0;
 	int count = 0;
 	int value = 0;
+	int (*f)(va_list);
 	
 	/*Prevent parsing a null pointer*/
 	if (format == NULL)
@@ -26,14 +25,31 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			count = write(1,&format[i],1);
+			value = write(1,&format[i],1);
 			count = count + value;
 			i++;
 			continue;
 		}
 		if (format[i] == '%')
 		{
-			printf("a percent is  detected\n");
+			f = check_specifier(&format[i + 1]);
+			if (f != NULL)
+			{
+				value = f(arg);
+				count = count + value;
+				i = i + 2;
+				continue;
+			}
+			if (format[i + 1] == '\0')
+				break;
+			if (format[i + 1] != '\0')
+			{
+				value = write(1,&format[i + 1],1);
+				count = count + value;
+				i = i + 2;
+				continue;
+			}
+
 		}
 		i++;
 	}
