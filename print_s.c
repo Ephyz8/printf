@@ -2,7 +2,7 @@
 
 /**
  * print_str - prints a character
- * @args: variadic parameter
+ * @arg: variadic parameter
  *
  * Return: pointer
  */
@@ -20,7 +20,7 @@ int print_str(va_list arg)
 		{
 			length++;
 		}
-		write(1,s,length);
+		write(1, s, length);
 		count += length;
 	}
 	return (count);

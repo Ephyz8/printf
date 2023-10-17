@@ -2,7 +2,7 @@
 
 /**
  * print_cent - prints a character
- * @args: variadic parameter
+ * @arg: variadic parameter
  *
  * Return: pointer
  */
@@ -14,7 +14,7 @@ int print_cent(va_list arg)
 	int count = 0;
 
 	format = "&";
-		write(1,format,1);
+		write(1, format, 1);
 		count++;
 
 	return (count);

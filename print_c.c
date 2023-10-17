@@ -2,7 +2,7 @@
 
 /**
  * print_char - prints a character
- * @args: variadic parameter
+ * @arg: variadic parameter
  *
  * Return: pointer
  */
