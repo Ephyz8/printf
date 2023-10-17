@@ -9,7 +9,7 @@
 int print_HEX_xtra(unsigned int num)
 {
 	int i, counter = 0;
-	int *arry;
+	int *array;
 	unsigned int t = num;
 
 	while (num / 16 != 0)
@@ -18,14 +18,14 @@ int print_HEX_xtra(unsigned int num)
 		counter++;
 	}
 	counter++;
-	array = malloc(sizeof(int) * counter)
-		return (NULL);
+	array = malloc(sizeof(int) * counter);
+	
 	for (i = 0; i < counter; i++)
 	{
 		array[i] = t % 16;
 		t = t / 16;
 	}
-	for (i = counter - 1; i >= 0; i++)
+	for (i = counter - 1; i >= 0; i--)
 	{
 		if (array[i] > 9)
 			array[i] = array[i] + 7;

@@ -24,7 +24,7 @@ int (*check_specifier(const char *format))(va_list)
 		{"x", print_hex},
 		{"X", print_HEX},
 		{"S", print_exc_string},
-		{"p", print_ptr},
+		{"p", print_pointer},
 		{NULL,  NULL}};
 
 	for (i = 0; my_array[i].t != NULL; i++)
@@ -33,6 +33,7 @@ int (*check_specifier(const char *format))(va_list)
 		{
 			return (my_array[i].f);
 		}
+
 
 	}
 	return (NULL);

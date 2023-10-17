@@ -10,7 +10,7 @@ int print_oct(va_list val)
 {
 	int i, counter = 0;
 	unsigned int num = va_arg(val, unsigned int);
-	int *arry;
+	int *array;
 	unsigned int t = num;
 
 	while (num / 8 != 0)
@@ -19,8 +19,7 @@ int print_oct(va_list val)
 		counter++;
 	}
 	counter++;
-	array = malloc(sizeof(int) * counter)
-		return (NULL);
+	array = malloc(sizeof(int) * counter);
 	for (i = 0; i < counter; i++)
 	{
 		array[i] = t % 8;

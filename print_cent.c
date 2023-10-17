@@ -7,13 +7,15 @@
  * Return: pointer
  */
 
-int print_cent(va_list args)
+int print_cent(va_list arg)
 {
-	const char *format = "%";
+	char *format = va_arg(arg, void *);
+	/*const char *format = "%";*/
 	int count = 0;
 
-	write(1,format,1);
-	count++;
+	format = "&";
+		write(1,format,1);
+		count++;
 
 	return (count);
 

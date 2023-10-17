@@ -33,7 +33,7 @@ int print_rot13(va_list val)
 			_putchar(s[i]);
 			counter++;
 		}
-		return (counter);
+	
 	}
+	return (counter);
 }
-
